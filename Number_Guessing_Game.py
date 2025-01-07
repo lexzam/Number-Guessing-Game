@@ -1,9 +1,12 @@
 from random import randint
 import art
+import os
 
 def clear():
-  import os
-  os.system("clear")
+   if os.name == 'nt':  # For Windows
+     os.system('cls')
+   else:  # For macOS/Linux
+     os.system('clear')
 
 def check_answer(player_guess, answer, turns):
   if player_guess > answer:
